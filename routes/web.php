@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('test')->group(function () {
+    Route::get('view',function(){
+        return view('top');
+    });
+});
