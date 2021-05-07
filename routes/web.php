@@ -13,4 +13,4 @@
 
 Route::get('', 'User\TopController@index')->name('user.top');
 
-// Route::get('thread','');
+// Route::get('threads','User\ThreadController@')->name('user.threads');
