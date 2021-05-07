@@ -20,3 +20,4 @@ Route::prefix('test')->group(function () {
         return view('top');
     });
 });
+
