@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('', 'User\TopController@index')->name('user.top');
 
-Route::prefix('test')->group(function () {
-    Route::get('view',function(){
-        return view('top');
-    });
-});
-
+// Route::get('thread','');
