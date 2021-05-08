@@ -161,6 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // l5-very-basic-auth
+        Olssonm\VeryBasicAuth\VeryBasicAuthServiceProvider::class,
 
         /*
          * Package Service Providers...
