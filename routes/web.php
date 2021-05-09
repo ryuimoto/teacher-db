@@ -19,5 +19,5 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 });
 
 Route::get('test',function(){
-    return 'after';
+    return 'test';
 });
