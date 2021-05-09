@@ -5,14 +5,12 @@
 @endsection
 @section('contents')
     <div class="coontents">
-    
         @forelse ($threads as $thread)
             <div class="comment-box">
-                <a href="">{{ $thread->name }}</a>
+                <a href="{{ route('user.thread',['thread' => $thread->id])}}">{{ $thread->name }}</a>
                 <p>{{ $thread->created_at->format('Y年m月d日') }}</p>
             </div>
         @empty
         @endforelse
-       
     </div>
 @endsection

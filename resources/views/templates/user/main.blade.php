@@ -14,7 +14,7 @@
             <img class="logo_img" src="{{ asset('img/logo.png') }}" alt="ロゴ">
         </a>
         <div>
-            <a href="{{ route('user.threads') }}">掲示板</a>
+            <a href="{{ route('user.threads') }}">教師リスト</a>
             <a href="">使い方</a>
             <a href="">削除ガイドライン</a>
             <a href="">支援する</a>
