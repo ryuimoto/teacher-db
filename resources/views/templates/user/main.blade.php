@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{ asset('img/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/user/main.css') }}">
+    @yield('style')
     <title>{{ config('name.site_title') }}</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
         @yield('contents')
     </header>
     <footer>
-        <small>© 2018 corpname inc.</small>
+        <small>© {{ \Carbon\Carbon::now()->year  }} corpname inc.</small>
     </footer>
 </body>
 </html>

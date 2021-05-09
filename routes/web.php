@@ -18,4 +18,6 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('threads','User\ThreadsController@index')->name('user.threads');
 
     
+
+    
 });
