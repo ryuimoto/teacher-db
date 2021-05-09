@@ -10,12 +10,18 @@
 </head>
 <body>
     <header>
-        <a href="{{ route('user.top') }}"><img class="logo_img" src="{{ asset('img/logo.png') }}" alt="ロゴ"></a>
+        <a href="{{ route('user.top') }}">
+            <img class="logo_img" src="{{ asset('img/logo.png') }}" alt="ロゴ">
+        </a>
         <div>
             <a href="{{ route('user.threads') }}">掲示板</a>
             <a href="">使い方</a>
             <a href="">削除ガイドライン</a>
             <a href="">支援する</a>
+        </div>
+        <div>
+            <input type="search" placeholder="教師の名前で検索">
+            <input type="submit" name="submit" value="検索">
         </div>
         @yield('contents')
     </header>

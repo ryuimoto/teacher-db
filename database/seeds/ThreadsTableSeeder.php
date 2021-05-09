@@ -19,7 +19,7 @@ class ThreadsTableSeeder extends Seeder
 
             Thread::create([
                 'name' => config("word.first_name.$run_first_num").config("word.last_name.$run_last_num") ,
-                'details' => 'test',
+                'details' => str_random(32),
                 'num_of_comments' => null,
                 'momentum' => null,
             ]);

@@ -1,0 +1,10 @@
+.comment-box {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    font-weight: bold;
+    border: solid 1px #000000;
+}
+.comment-box p {
+    margin: 0; 
+    padding: 0;
+}
