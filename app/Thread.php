@@ -17,6 +17,7 @@ class Thread extends Model
         'name',
         'details',
         'num_of_comments',
+        'momentum',
     ];
 
     /**
