@@ -13,5 +13,8 @@
             </div>
         @empty
         @endforelse
+        <div>
+            {{ $threads->links('vendor.pagination.semantic-ui') }}
+        </div>
     </div>
 @endsection

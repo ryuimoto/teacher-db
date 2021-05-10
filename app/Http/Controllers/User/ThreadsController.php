@@ -10,7 +10,7 @@ use App\Thread;
 class ThreadsController extends Controller
 {
     public function index(){
-        $threads = Thread::all();
+        $threads = Thread::paginate(15);
 
         return view('user.threads')->with([
             'threads' => $threads,
