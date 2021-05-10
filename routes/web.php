@@ -19,6 +19,8 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     
     Route::get('thread/{thread}','User\ThreadController@index')->name('user.thread');
 
+    // Route::get('delete_guidelines','User\');
+
     Route::get('support','User\SupportController@index')->name('user.support');
     Route::post('support','User\SupportController@post');
 
