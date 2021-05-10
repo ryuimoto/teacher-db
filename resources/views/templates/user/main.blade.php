@@ -15,7 +15,7 @@
         </a>
         <div>
             <a href="{{ route('user.threads') }}">教師リスト</a>
-            <a href="">使い方</a>
+            <a href="{{ route('user.how_to_use') }}">使い方</a>
             <a href="{{ route('user.delete_guideline') }}">削除ガイドライン</a>
             <a href="{{ route('user.support') }}">支援する</a>
         </div>
