@@ -17,7 +17,7 @@
             <a href="{{ route('user.threads') }}">教師リスト</a>
             <a href="">使い方</a>
             <a href="">削除ガイドライン</a>
-            <a href="">支援する</a>
+            <a href="{{ route('user.support') }}">支援する</a>
         </div>
         <div>
             <input type="search" placeholder="教師の名前で検索">
