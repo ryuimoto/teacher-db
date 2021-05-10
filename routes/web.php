@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('', 'User\TopController@index')->name('user.top');
 
