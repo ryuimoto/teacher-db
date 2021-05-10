@@ -23,7 +23,7 @@
                         $week_num = $comment->created_at->format('w');
                         $week = config("word.week.$week_num");
                     ?>
-                    <span>{{ $comment->created_at->format("Y/n/d($week)") }} </span>
+                    <span>{{ $comment->created_at->format("Y/n/d($week) H:i:s") }} </span>
                     <span>ID:{{ $comment->id }}</span>
                     <div>
                         <span>{{ $comment->comment }}</span>
