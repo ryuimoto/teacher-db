@@ -1,0 +1,36 @@
+
+.title {
+    margin-left: 30px;
+}
+
+h4.definition{
+    margin-left: 50px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+
+}
+
+.small-title{
+    margin-left: 70px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    
+}
+
+.contents{
+    margin-left: 80px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+.small-title-second{
+    margin-left: 100px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+.contents-second{
+    margin-left: 120px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
