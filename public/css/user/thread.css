@@ -1,3 +1,18 @@
 .thread-name {
     color: #3399FF;
 }
+
+.comment-box{
+    width:auto;
+    height: auto;
+    margin: 1em;
+    padding: 10px;
+    /* border: solid 3px #000000; */
+
+    background-color: #efefef;
+}
+
+.contributor{
+    margin: auto;
+    color: #048004;
+}
