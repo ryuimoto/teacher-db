@@ -20,10 +20,22 @@ class ThreadController extends Controller
         ]);
     }
 
-    public function post(Request $request){
+    public function post(Thread $thread,Request $request){
         $this->postValidate($request);
 
-        dd('done');
+        $cur_comments_count = Comment::where('thread_id',$thread->id)
+        ->orderBy('comment_num','desc')->first();
+    
+        Comment::create([
+            'thread_id' => $thread->id,
+            'comment_num' => $cur_comments_count->comment_num +1,
+            'name' => $request->name,
+            'email' => $request->email,
+            'comment_view_id' => str_random(8),
+            'comment' => $request->comment,
+        ]);
+
+        return back();
     }
 
     public function postValidate($request){
