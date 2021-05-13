@@ -11,6 +11,7 @@ class ThreadController extends Controller
 {
     public function index(Thread $thread){
         $comments = Comment::where('thread_id',$thread->id)->get();
+        
         return view('user.thread')->with([
             'thread' => $thread,
             'comments' => $comments,

@@ -27,4 +27,8 @@ class Thread extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function comment(){
+        return $this->hasMany('App\Comment','thread_id',);
+    }
 }

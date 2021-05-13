@@ -9,6 +9,8 @@ class Comment extends Model
 {
     protected $fillable = [
         'thread_id',
+        'comment_num',
+        'comment_view_id',
         'name',
         'comment'
     ];

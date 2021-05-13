@@ -12,6 +12,7 @@
         @forelse ($comments as $comment)
             <div class="comment-box">
                 <div>
+                    <span>{{ $comment->comment_num }}</span>
                     <span class="contributor">
                         @if (is_null($comment->name))
                             {{ config('word.comment_name.0') }}
