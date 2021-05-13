@@ -10,7 +10,8 @@ use App\Comment;
 class ThreadController extends Controller
 {
     public function index(Thread $thread){
-        $comments = Comment::where('thread_id',$thread->id)->get();
+        $comments = Comment::where('thread_id',$thread->id)
+        ->orderBy('comment_num','asc')->get();
         
         return view('user.thread')->with([
             'thread' => $thread,
