@@ -13,13 +13,19 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 100; $i++) { 
-            // $run_thread = Thread::inRandomOrder()->first();
-            $run_thread = Thread::first();
+        for ($i=0; $i < 500; $i++) { 
+            $run_thread = Thread::inRandomOrder()->first();
+            // $run_thread = Thread::first();
             $run_comment = mt_rand(0,9);
 
             $cur_comment_num = Comment::where('thread_id',$run_thread->id)
             ->orderBy('created_at','asc')->get()->count();
+
+            if($cur_comment_num == 0){
+                $cur_comment_num = 1;
+            }else{
+                $cur_comment_num++;
+            }
 
             Comment::create([
                 'thread_id' => $run_thread->id,

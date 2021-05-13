@@ -25,14 +25,34 @@
                         $week = config("word.week.$week_num");
                     ?>
                     <span>{{ $comment->created_at->format("Y/n/d($week) H:i:s") }} </span>
-                    <span>ID:{{ $comment->id }}</span>
+                    <span>ID:{{ $comment->comment_view_id }}</span>
                     <div>
                         <span>{{ $comment->comment }}</span>
                     </div>
                 </div>
             </div>
+            <br>
         @empty
         @endforelse
+        <hr>
+        <div class="post-box">
+            <p>レスを投稿する</p>
+            <hr>
+            <form method="POST">
+                @csrf
+                <div class="post-input">
+                    <input type="text" name="name" placeholder="名前(省略可)">
+                </div>
+                <div class="post-input">
+                    <input type="text" name="email" placeholder="メールアドレス(省略可)">
+                </div>
+                <div class="post-input">
+                    <textarea name="comment" id="" cols="30" rows="10" placeholder="コメント内容"></textarea>
+                </div>
+                <div class="post-input">
+                    <input type="submit" value="書き込む">
+                </div>
+            </form>
+        </div>
     </div>
-   
 @endsection
