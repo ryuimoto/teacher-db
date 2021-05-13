@@ -41,12 +41,21 @@
             <form method="POST">
                 @csrf
                 <div class="post-input">
+                    @error('name')
+                        <li>{{$message}}</li>
+                    @enderror
                     <input type="text" name="name" placeholder="名前(省略可)">
                 </div>
                 <div class="post-input">
+                    @error('email')
+                        <li>{{$message}}</li>
+                    @enderror
                     <input type="text" name="email" placeholder="メールアドレス(省略可)">
                 </div>
                 <div class="post-input">
+                    @error('comment')
+                        <li>{{$message}}</li>
+                    @enderror
                     <textarea name="comment" id="" cols="30" rows="10" placeholder="コメント内容"></textarea>
                 </div>
                 <div class="post-input">

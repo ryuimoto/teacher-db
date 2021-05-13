@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->bigInteger('comment_num');
             $table->string('comment_view_id');
             $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->longText('comment');
             $table->timestamps();
         });

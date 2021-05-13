@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Thread;
 use App\Comment;
+use SebastianBergmann\CodeUnit\FunctionUnit;
 
 class ThreadController extends Controller
 {
@@ -16,6 +17,20 @@ class ThreadController extends Controller
         return view('user.thread')->with([
             'thread' => $thread,
             'comments' => $comments,
+        ]);
+    }
+
+    public function post(Request $request){
+        $this->postValidate($request);
+
+        dd('done');
+    }
+
+    public function postValidate($request){
+        $request->validate([
+            'name' => 'nullable|max:255|',
+            'email' => 'nullable|email|max:255',
+            'comment' => 'required|max:300',
         ]);
     }
 }
