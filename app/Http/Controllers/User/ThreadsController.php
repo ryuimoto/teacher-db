@@ -16,4 +16,26 @@ class ThreadsController extends Controller
             'threads' => $threads,
         ]);
     }
+
+    public function registTeacher(){
+        return view('user.regist_teacher');
+    }
+
+    public function registTeacherPost(Request $request){
+        $this->registTeacherPostValidate($request);
+        
+        Thread::create([
+           'name' => $request->name,
+           'details' => $request->details,
+        ]);
+
+        return redirect()->route('user.threads');
+    }
+
+    public function registTeacherPostValidate($request){
+        $request->validate([
+            'name' => 'required|max:255|',
+            'details' => 'required|max:500',
+        ]);
+    }
 }

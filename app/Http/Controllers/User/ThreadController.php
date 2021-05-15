@@ -25,7 +25,7 @@ class ThreadController extends Controller
 
         $cur_comments_count = Comment::where('thread_id',$thread->id)
         ->orderBy('comment_num','desc')->first();
-    
+
         Comment::create([
             'thread_id' => $thread->id,
             'comment_num' => $cur_comments_count->comment_num +1,

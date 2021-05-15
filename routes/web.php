@@ -15,6 +15,9 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('', 'User\TopController@index')->name('user.top');
 
     Route::get('threads','User\ThreadsController@index')->name('user.threads');
+
+    Route::get('regist_teacher','User\ThreadsController@registTeacher')->name('user.regist_teacher');
+    Route::post('regist_teacher','User\ThreadsController@registTeacherPost');
     
     Route::get('thread/{thread}','User\ThreadController@index')->name('user.thread');
     Route::post('thread/{thread}','User\ThreadController@post');
@@ -25,5 +28,4 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
     Route::get('support','User\SupportController@index')->name('user.support');
     Route::post('support','User\SupportController@post');
-
 });
