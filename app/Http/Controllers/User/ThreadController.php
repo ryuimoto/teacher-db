@@ -55,7 +55,7 @@ class ThreadController extends Controller
     }
 
     public function commentDetails(Comment $comment,Thread $thread){
-        $parent_comment = Comment::where('comment_view_id',$comment->res_comment_num)->first();
+        $parent_comment = Comment::where('comment_num',$comment->res_comment_num)->first();
 
         return view('user.thread')->with([
             'parent_comment' => $parent_comment,
