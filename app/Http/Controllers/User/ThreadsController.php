@@ -11,7 +11,6 @@ class ThreadsController extends Controller
 {
     public function index(Request $request){
 
-        dump($request->all());
         $threads = Thread::paginate(15);
 
         return view('user.threads')->with([

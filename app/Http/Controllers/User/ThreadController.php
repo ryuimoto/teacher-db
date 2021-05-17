@@ -38,8 +38,8 @@ class ThreadController extends Controller
         if(strpos($request->comment,'>>') !== false){
             preg_match_all('!\d+!', $request->comment, $match);
 
-            $comment->res_view_id = $match[0][0];
-            $comment->comment = str_replace(">> $comment->res_view_id ",'',$comment->comment);
+            $comment->res_comment_num = $match[0][0];
+            $comment->comment = str_replace(">> $comment->res_comment_num ",'',$comment->comment);
             $comment->save();
         }
 
@@ -54,7 +54,13 @@ class ThreadController extends Controller
         ]);
     }
 
-    public function commentDetails(Comment $comment){
-        dd($comment);
+    public function commentDetails(Comment $comment,Thread $thread){
+        $parent_comment = Comment::where('comment_view_id',$comment->res_comment_num)->first();
+
+        return view('user.thread')->with([
+            'parent_comment' => $parent_comment,
+            'comment' => $comment,
+            'thread' => $thread,
+        ]);
     }
 }

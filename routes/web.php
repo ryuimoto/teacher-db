@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('thread/{thread}','User\ThreadController@index')->name('user.thread');
     Route::post('thread/{thread}','User\ThreadController@post');
     
-    Route::get('comment_details/{comment}','User\ThreadController@commentDetails')->name('user.comment_details');
+    Route::get('comment_details/{comment}/{thread}','User\ThreadController@commentDetails')->name('user.comment_details');
 
 
     Route::get('how_to_use','User\HowToUseController@index')->name('user.how_to_use');
