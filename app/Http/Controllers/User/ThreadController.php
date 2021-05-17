@@ -26,6 +26,13 @@ class ThreadController extends Controller
         $cur_comments_count = Comment::where('thread_id',$thread->id)
         ->orderBy('comment_num','desc')->first();
 
+        if(strpos($request->comment,'>>') !== false){ // レス返信が存在した時の処理
+            preg_match_all('!\d+!', $request->comment, $match);
+            dd($match[0][0]); 
+        }
+
+        dd('no_hit');
+
         Comment::create([
             'thread_id' => $thread->id,
             'comment_num' => $cur_comments_count->comment_num +1,

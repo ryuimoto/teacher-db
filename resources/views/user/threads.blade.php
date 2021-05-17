@@ -6,6 +6,13 @@
 @section('contents')
     <div class="coontents">
         <div>
+            <form method="GET">
+                @csrf
+                <input type="search" placeholder="教師の名前で検索">
+                <input type="submit" name="submit" value="検索">
+            </form>
+        </div>
+        <div>
             <button onclick="location.href='{{ route('user.regist_teacher') }}'">先生を登録する</button>
         </div>
         <div>

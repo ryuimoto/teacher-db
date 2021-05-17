@@ -19,10 +19,6 @@
             <a href="{{ route('user.delete_guideline') }}">削除ガイドライン</a>
             <a href="{{ route('user.support') }}">支援する</a>
         </div>
-        <div>
-            <input type="search" placeholder="教師の名前で検索">
-            <input type="submit" name="submit" value="検索">
-        </div>
         @yield('contents')
     </header>
     <footer>
