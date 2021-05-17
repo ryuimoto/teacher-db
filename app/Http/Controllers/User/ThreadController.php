@@ -26,14 +26,7 @@ class ThreadController extends Controller
         $cur_comments_count = Comment::where('thread_id',$thread->id)
         ->orderBy('comment_num','desc')->first();
 
-        if(strpos($request->comment,'>>') !== false){ // レス返信が存在した時の処理
-            preg_match_all('!\d+!', $request->comment, $match);
-            dd($match[0][0]); 
-        }
-
-        dd('no_hit');
-
-        Comment::create([
+        $comment = Comment::create([
             'thread_id' => $thread->id,
             'comment_num' => $cur_comments_count->comment_num +1,
             'name' => $request->name,
@@ -41,6 +34,14 @@ class ThreadController extends Controller
             'comment_view_id' => str_random(8),
             'comment' => $request->comment,
         ]);
+
+        if(strpos($request->comment,'>>') !== false){
+            preg_match_all('!\d+!', $request->comment, $match);
+
+            $comment->res_view_id = $match[0][0];
+            $comment->comment = str_replace(">> $comment->res_view_id ",'',$comment->comment);
+            $comment->save();
+        }
 
         return back();
     }
@@ -51,5 +52,9 @@ class ThreadController extends Controller
             'email' => 'nullable|email|max:255',
             'comment' => 'required|max:300',
         ]);
+    }
+
+    public function commentDetails(Comment $comment){
+        dd($comment);
     }
 }

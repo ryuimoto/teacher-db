@@ -27,7 +27,14 @@
                     <span>{{ $comment->created_at->format("Y/n/d($week) H:i:s") }} </span>
                     <span>ID:{{ $comment->comment_view_id }}</span>
                     <div>
-                        <span>{{ $comment->comment }}</span>
+                        @if (isset($comment->res_view_id))
+                            <span>
+                                <a href="{{ route('user.comment_details',['comment' => $comment]) }}" target="_blank"> >> {{ $comment->res_view_id }}</a>
+                                {{ $comment->comment }}
+                            </span>
+                        @else
+                            <span>{{ $comment->comment }}</span>
+                        @endif
                     </div>
                 </div>
             </div>

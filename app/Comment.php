@@ -11,6 +11,7 @@ class Comment extends Model
         'thread_id',
         'comment_num',
         'comment_view_id',
+        'res_view_id',
         'name',
         'comment'
     ];
