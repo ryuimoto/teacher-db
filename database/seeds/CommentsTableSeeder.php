@@ -41,7 +41,6 @@ class CommentsTableSeeder extends Seeder
                     $comment->res_comment_num = $parent_comments[1]->comment_num;
                     $comment->save();
                 }
-         
             }
 
             dump($cur_comment_num);

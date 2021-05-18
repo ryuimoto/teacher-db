@@ -30,7 +30,7 @@
                         <div>
                             @if (isset($comment->res_comment_num))
                                 <span>
-                                    <a href="{{ route('user.comment_details',['comment' => $comment,'thread' => $thread]) }}" target="_blank"> >> {{ $comment->res_comment_num }}</a>
+                                    <a href="{{ route('user.comment_details',['comment' => $comment,'thread' => $thread]) }}" target="_blank"> >>{{ $comment->res_comment_num }}</a>
                                     {{ $comment->comment }}
                                 </span>
                             @else
@@ -63,7 +63,7 @@
                     <div>
                         @if (isset($parent_comment->res_comment_num))
                             <span>
-                                <a href="{{ route('user.comment_details',['comment' => $parent_comment,'thread' => $thread]) }}" target="_blank"> >> {{ $parent_comment->res_comment_num }}</a>
+                                <a href="{{ route('user.comment_details',['comment' => $parent_comment,'thread' => $thread]) }}" target="_blank"> >>{{ $parent_comment->res_comment_num }}</a>
                                 {{ $parent_comment->comment }}
                             </span>
                         @else
@@ -92,7 +92,7 @@
                     <div>
                         @if (isset($comment->res_comment_num))
                             <span>
-                                <a href="{{ route('user.comment_details',['comment' => $comment,'thread' => $thread]) }}" target="_blank"> >> {{ $comment->res_comment_num }}</a>
+                                <a href="{{ route('user.comment_details',['comment' => $comment,'thread' => $thread]) }}" target="_blank"> >>{{ $comment->res_comment_num }}</a>
                                 {{ $comment->comment }}
                             </span>
                         @else

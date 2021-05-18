@@ -40,6 +40,9 @@ class ThreadController extends Controller
 
             $comment->res_comment_num = $match[0][0];
             $comment->comment = str_replace(">> $comment->res_comment_num ",'',$comment->comment);
+            $comment->comment = str_replace(">>$comment->res_comment_num ",'',$comment->comment);
+            dd($comment->comment);
+
             $comment->save();
         }
 
@@ -47,6 +50,7 @@ class ThreadController extends Controller
     }
 
     public function postValidate($request){
+     
         $request->validate([
             'name' => 'nullable|max:255|',
             'email' => 'nullable|email|max:255',
