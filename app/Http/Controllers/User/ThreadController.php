@@ -41,7 +41,6 @@ class ThreadController extends Controller
             $comment->res_comment_num = $match[0][0];
             $comment->comment = str_replace(">> $comment->res_comment_num ",'',$comment->comment);
             $comment->comment = str_replace(">>$comment->res_comment_num ",'',$comment->comment);
-            dd($comment->comment);
 
             $comment->save();
         }
