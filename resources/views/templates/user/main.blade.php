@@ -9,6 +9,7 @@
     <title>{{ config('name.site_title') }}</title>
 </head>
 <body>
+    @yield('js')
     <header>
         <a href="{{ route('user.top') }}">
             <img class="logo_img" src="{{ asset('img/logo.png') }}" alt="ロゴ">
