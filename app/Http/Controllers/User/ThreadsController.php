@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Thread;
 
-
 class ThreadsController extends Controller
 {
     public function index(Request $request){
 
-        $threads = Thread::paginate(15);
+        $keyword = $request->input('keyword') ?? '';
+        $pat = '%' . addcslashes($keyword, '%_\\') . '%';
+        $threads = Thread::where('name', 'LIKE', $pat)->paginate(15);
 
         return view('user.threads')->with([
             'threads' => $threads,

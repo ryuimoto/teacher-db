@@ -8,7 +8,7 @@
         <div>
             <form method="GET">
                 @csrf
-                <input type="search" placeholder="教師の名前で検索">
+                <input type="search" name="keyword" placeholder="教師の名前で検索">
                 <input type="submit" name="submit" value="検索">
             </form>
         </div>
