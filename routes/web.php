@@ -24,7 +24,6 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     
     Route::get('comment_details/{comment}/{thread}','User\ThreadController@commentDetails')->name('user.comment_details');
 
-
     Route::get('how_to_use','User\HowToUseController@index')->name('user.how_to_use');
 
     Route::get('delete_guidelines','User\DeleteGuideLineController@index')->name('user.delete_guideline');

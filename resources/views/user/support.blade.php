@@ -13,13 +13,12 @@
         <p>何卒、よろしくお願いいたします。</p>
     </div>
     <div>
-        <form method="post">
-            @csrf
-            <input type="number" min="0">
-            <p></p>
-            <input type="submit" value="投げ銭する">
-        </form>
-
+      <form method="post">
+        @csrf
+        <input type="number" min="0">
+        <p></p>
+        {{-- <input type="submit" value="投げ銭する"> --}}
+      </form>
     </div>
     <div id="paypal-button-container"></div>
     <script>
