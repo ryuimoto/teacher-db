@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::post('support','User\SupportController@post');
 
     Route::prefix('/admin/0523')->group(function () {
-        // Route::get('','Admin\')->name('user.support');
+        Route::get('','Admin\TopController@index')->name('admin.top');
     });
 
 });
