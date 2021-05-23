@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
     Route::prefix('/admin/0523')->group(function () {
         Route::get('','Admin\TopController@index')->name('admin.top');
+        
     });
 
 });
