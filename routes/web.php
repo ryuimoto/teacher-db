@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     });
 
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
