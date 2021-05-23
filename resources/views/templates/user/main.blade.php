@@ -23,7 +23,7 @@
         @yield('contents')
     </header>
     <footer>
-        <small>© {{ \Carbon\Carbon::now()->year  }} corpname inc.</small>
+        <small>© {{ \Carbon\Carbon::now()->year  }} Sensei DB inc.</small>
     </footer>
 </body>
 </html>
