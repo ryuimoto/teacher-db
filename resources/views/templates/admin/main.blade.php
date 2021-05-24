@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('libraries/ample-admin-lite-master/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css') }}">
     <!-- Custom CSS -->
     <link href="{{ asset('libraries/ample-admin-lite-master/css/style.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/admin/main.css') }}">
 </head>
 
 <body>
@@ -46,17 +47,12 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="dashboard.html">
-                        <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!-- Dark Logo icon -->
-                            <img src="{{ asset('libraries/ample-admin-lite-master/plugins/images/logo-icon.png') }}" alt="homepage" />
-                        </b>
+                    <a class="navbar-brand" href="{{ route('admin.top') }}">
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{ asset('libraries/ample-admin-lite-master/plugins/images/logo-text.png') }}" alt="homepage" />
+                            <img src="{{ asset('img/logo.png') }}" class="logo-img" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
