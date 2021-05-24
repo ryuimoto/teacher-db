@@ -5,5 +5,4 @@ return [
 
     'top' => 'Dashboard',
     'threads' => 'Threads',
-
 ];
