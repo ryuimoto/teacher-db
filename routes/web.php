@@ -30,9 +30,13 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
     Route::get('support','User\SupportController@index')->name('user.support');
     Route::post('support','User\SupportController@post');  
+    
     Route::prefix('/admin/0523')->group(function () {
         Route::get('/login','Admin\Auth\LoginController@showLoginForm')->name('admin.login');
         Route::post('/login','Admin\Auth\LoginController@login');
+
+        Route::get('logout','Admin\Auth\LoginController@logout')->name('admin.logout');
+
         
         Route::middleware('auth:admin')->group(function () { 
             Route::get('','Admin\TopController@index')->name('admin.top');

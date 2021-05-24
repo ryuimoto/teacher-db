@@ -13,17 +13,18 @@
                 <p class="text-center">Sign in by entering the information below</p>
                 <form method="POST" class="login-form">
                     @csrf
+                    @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
-                        @error('name')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                     
                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
                         <input type="text" name="name" class="form-control" placeholder="Username" required>
                     </div>
+                    @error('password')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
-                        @error('password')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
                         <input type="password" name="password" class="form-control" placeholder="Password" required>
                     </div>
