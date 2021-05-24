@@ -14,12 +14,18 @@
                 <form method="POST" class="login-form">
                     @csrf
                     <div class="form-group">
+                        @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                        <input type="text" class="form-control" placeholder="Username" required>
+                        <input type="text" name="name" class="form-control" placeholder="Username" required>
                     </div>
                     <div class="form-group">
+                        @error('password')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                        <input type="password" class="form-control" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn form-control btn-primary rounded submit px-3">Login</button>
