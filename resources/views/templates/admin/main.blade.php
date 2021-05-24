@@ -94,8 +94,9 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="{{ asset('libraries/ample-admin-lite-master/plugins/images/users/varun.jpg') }}" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                                <img src="{{ asset('img/white.jpeg') }}" alt="user-img" width="36"
+                                    class="img-circle"><span class="text-white font-medium">{{ \Auth::user()->name }}</span>
+                            </a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
