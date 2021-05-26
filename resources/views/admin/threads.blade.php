@@ -5,6 +5,9 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
 @endsection
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/admin/threads.css') }}">
+@endsection
 @section('contents')
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
@@ -156,4 +159,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $('tr[data-href]').addClass('clickable')
+            .click(function (e) {
+            if (!$(e.target).is('a')) {
+                window.location = $(e.target).closest('tr').data('href');
+            };
+        });
+    </script>
 @endsection

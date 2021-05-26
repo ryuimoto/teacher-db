@@ -22,6 +22,7 @@
     <link href="{{ asset('libraries/ample-admin-lite-master/css/style.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin/main.css') }}">
     @yield('js')
+    @yield('css')
 </head>
 
 <body>
@@ -181,5 +182,4 @@
     <!--chartis chart-->
     <script src="{{ asset('libraries/ample-admin-lite-master/plugins/bower_components/chartist/dist/chartist.min.js') }}"></script>
 </body>
-
 </html>

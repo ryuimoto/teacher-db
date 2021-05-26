@@ -18,6 +18,6 @@ class ThreadsController extends Controller
     }
 
     public function showThread(Thread $thread){
-        dd(3547687);
+        dd($thread);
     }
 }
