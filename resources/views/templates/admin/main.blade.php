@@ -21,6 +21,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('libraries/ample-admin-lite-master/css/style.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin/main.css') }}">
+    @yield('js')
 </head>
 
 <body>
@@ -157,9 +158,6 @@
             <!-- End footer -->
             <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
@@ -167,6 +165,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    @yield('script')
     <script src="{{ asset('libraries/ample-admin-lite-master/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('libraries/ample-admin-lite-master/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
@@ -181,8 +180,6 @@
     <!--This page JavaScript -->
     <!--chartis chart-->
     <script src="{{ asset('libraries/ample-admin-lite-master/plugins/bower_components/chartist/dist/chartist.min.js') }}"></script>
-    <script src="{{ asset('libraries/ample-admin-lite-master/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
-    <script src="{{ asset('libraries/ample-admin-lite-master/js/pages/dashboards/dashboard1.js') }}"></script>
 </body>
 
 </html>

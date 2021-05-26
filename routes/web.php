@@ -36,12 +36,13 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
         Route::post('/login','Admin\Auth\LoginController@login');
 
         Route::get('logout','Admin\Auth\LoginController@logout')->name('admin.logout');
-
         
         Route::middleware('auth:admin')->group(function () { 
             Route::get('','Admin\TopController@index')->name('admin.top');
-
+            
             Route::get('/threads','Admin\ThreadsController@index')->name('admin.threads');
+
+            Route::get('/thread/{thread}','Admin\ThreadsController@showThread')->name('admin.thread');
         });
     });
 });
