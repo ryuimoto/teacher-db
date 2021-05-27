@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
             Route::get('/threads','Admin\ThreadsController@index')->name('admin.threads');
 
             Route::get('/thread/{thread}','Admin\ThreadsController@showThread')->name('admin.thread');
+
         });
     });
 });

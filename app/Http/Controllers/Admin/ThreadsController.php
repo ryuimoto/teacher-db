@@ -18,6 +18,9 @@ class ThreadsController extends Controller
     }
 
     public function showThread(Thread $thread){
-        dd($thread);
+
+        return view('admin.thread')->with([
+            'thread' => $thread,
+        ]);
     }
 }
