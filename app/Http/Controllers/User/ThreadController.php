@@ -49,7 +49,6 @@ class ThreadController extends Controller
     }
 
     public function postValidate($request){
-     
         $request->validate([
             'name' => 'nullable|max:255|',
             'email' => 'nullable|email|max:255',
