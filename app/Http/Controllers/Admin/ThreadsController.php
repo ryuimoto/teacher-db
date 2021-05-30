@@ -42,7 +42,7 @@ class ThreadsController extends Controller
 
    
     public function deleteThread(Request $request,Thread $thread){
-       $thread->delete();
+    //    $thread->delete();
        
        return redirect()->route('admin.threads');
     }

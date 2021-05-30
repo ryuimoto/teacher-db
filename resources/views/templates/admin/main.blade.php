@@ -19,7 +19,7 @@
     <link href="{{ asset('/libraries/ample-admin-lite-master/plugins/bower_components/chartist/dist/chartist.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('libraries/ample-admin-lite-master/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css') }}">
     <!-- Custom CSS -->
-    <link href="{{ asset('libraries/ample-admin-lite-master/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/libraries/ample-admin-lite-master/css/style.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admin/main.css') }}">
     @yield('js')
     @yield('css')
