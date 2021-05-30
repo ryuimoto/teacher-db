@@ -39,21 +39,19 @@
                                 @csrf
                                 @method('delete')
                                 <div class="col-sm-12">
-                                    <button type="button" id="delete" class="btn btn-danger">Delete Thread</button>
+                                    <button type="button" id="delete" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Thread</button>
                                 </div>
-                                <div class="modal" tabindex="-1">
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                       <div class="modal-content">
                                         <div class="modal-header">
-                                          <h5 class="modal-title">Modal title</h5>
+                                          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete the thread?</h5>
                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                          <p>Modal body text goes here.</p>
-                                        </div>
+                                       
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                          <button type="button" class="btn btn-primary">Save changes</button>
+                                          <button type="submit" class="btn btn-danger">Delete</button>
                                         </div>
                                       </div>
                                     </div>
@@ -61,21 +59,9 @@
                             </form>
                             </div>
                             </div>
-                
                     </div>
                 </div>
-              
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-<script>
-    var myModal = document.getElementById('delete')
-    var myInput = document.getElementById('myInput')
-
-    myModal.addEventListener('shown.bs.modal', function () {
-    myInput.focus()
-    });
-</script>
 @endsection
