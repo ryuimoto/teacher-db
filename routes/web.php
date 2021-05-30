@@ -28,8 +28,10 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
     Route::get('delete_guidelines','User\DeleteGuideLineController@index')->name('user.delete_guideline');
 
+    Route::get('request_for_deletion','User\DeleteGuideLineController@showRequestForDeletion')->name('user.request_for_deletion');
+
     Route::get('support','User\SupportController@index')->name('user.support');
-    Route::post('support','User\SupportController@post');  
+    Route::post('support','User\SupportController@post');
     
     Route::prefix('/admin/0523')->group(function () {
         Route::get('/login','Admin\Auth\LoginController@showLoginForm')->name('admin.login');

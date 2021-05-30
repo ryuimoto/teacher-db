@@ -131,6 +131,13 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.threads') }}"
+                                aria-expanded="false">
+                                <i class="fa fa-user-times" aria-hidden="true"></i>
+                                <span class="hide-menu">{{ config('name.request_for_deletion') }}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.logout') }}"
                                 aria-expanded="false">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i>

@@ -7,4 +7,5 @@ return [
 
     'top' => 'Dashboard',
     'threads' => 'Threads',
+    'request_for_deletion' => 'RequestForDeletion',
 ];
