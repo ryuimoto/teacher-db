@@ -14,4 +14,20 @@ class DeleteGuideLineController extends Controller
     public function showRequestForDeletion(){
         return view('user.request_for_deletion');
     }
+
+    public function RequestForDeletionPost(Request $request){
+
+        $this->RequestForDeletionValidate($request);
+
+        dd('done!!!');
+    }
+
+    public function RequestForDeletionValidate(Request $request){
+        $request->validate([
+            'classification' => 'required|max:200',
+            'name' => 'required|max:255',
+            'thread_name' => 'required|max:255',
+            'url.*' => 'url|max:255',
+        ]);
+    }
 }

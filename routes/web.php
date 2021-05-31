@@ -29,6 +29,8 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('delete_guidelines','User\DeleteGuideLineController@index')->name('user.delete_guideline');
 
     Route::get('request_for_deletion','User\DeleteGuideLineController@showRequestForDeletion')->name('user.request_for_deletion');
+    Route::post('request_for_deletion','User\DeleteGuideLineController@RequestForDeletionPost');
+
 
     Route::get('support','User\SupportController@index')->name('user.support');
     Route::post('support','User\SupportController@post');
