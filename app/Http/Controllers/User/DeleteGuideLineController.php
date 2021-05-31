@@ -16,7 +16,6 @@ class DeleteGuideLineController extends Controller
     }
 
     public function RequestForDeletionPost(Request $request){
-
         $this->RequestForDeletionValidate($request);
 
         dd('done!!!');
@@ -28,6 +27,7 @@ class DeleteGuideLineController extends Controller
             'name' => 'required|max:255',
             'thread_name' => 'required|max:255',
             'url.*' => 'url|max:255',
+            'delete_reason' => 'required|max:500',
         ]);
     }
 }

@@ -150,6 +150,10 @@ return [
         'email' => 'メールアドレス',
         'comment' => 'コメント',
         'details' => '先生の詳細',
+        'url.1' => '1番目のURL',
+        'url.2' => '2番目のURL',
+        'url.3' => '3番目のURL',
+        'delete_reason' => '削除依頼の理由',
     ],
 
 ];
