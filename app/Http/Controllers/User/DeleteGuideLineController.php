@@ -18,7 +18,7 @@ class DeleteGuideLineController extends Controller
     public function RequestForDeletionPost(Request $request){
         $this->RequestForDeletionValidate($request);
 
-        dd('done!!!');
+        // d
     }
 
     public function RequestForDeletionValidate(Request $request){
