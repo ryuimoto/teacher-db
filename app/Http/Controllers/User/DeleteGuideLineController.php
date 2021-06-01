@@ -33,8 +33,7 @@ class DeleteGuideLineController extends Controller
 
         $request_for_delete->update();
 
-        return back();
-        
+        return back()->with('post_message','投稿が完了しました');
     }
 
     public function RequestForDeletionValidate(Request $request){

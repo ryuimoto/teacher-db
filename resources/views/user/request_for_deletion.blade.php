@@ -1,5 +1,11 @@
 @extends('templates.user.main')
 @section('contents')
+    @if (session('post_message'))
+        <div class="flash_message bg-success text-center py-3 my-0">
+            {{ session('post_message') }}
+        </div>
+        <br>
+    @endif
     <form method="post">
         @csrf
         <tr>
