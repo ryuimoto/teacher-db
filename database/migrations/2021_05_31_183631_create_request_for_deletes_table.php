@@ -14,7 +14,12 @@ class CreateRequestForDeletesTable extends Migration
     public function up()
     {
         Schema::create('request_for_deletes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->integer('classification');
+            $table->string('thread_name');
+            $table->string('name');
+            $table->longText('urls')->nullable();
+            $table->longText('delete_reason');
             $table->timestamps();
         });
     }

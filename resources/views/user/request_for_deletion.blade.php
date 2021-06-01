@@ -9,10 +9,10 @@
                 @enderror
                 <th>削除の区分：</th>
                 <label for="">
-                    <input type="radio" name="classification" value="thread" checked>スレッド
+                    <input type="radio" name="classification" value="1" checked>スレッド
                 </label>
                 <label for="">
-                    <input type="radio" name="classification" value="res">レス
+                    <input type="radio" name="classification" value="2">レス
                 </label>
                 <small>
                     &nbsp;

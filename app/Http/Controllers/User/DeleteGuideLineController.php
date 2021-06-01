@@ -5,6 +5,8 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\RequestForDelete;
+
 class DeleteGuideLineController extends Controller
 {
     public function index(){
@@ -18,7 +20,21 @@ class DeleteGuideLineController extends Controller
     public function RequestForDeletionPost(Request $request){
         $this->RequestForDeletionValidate($request);
 
-        // d
+        $request_for_delete = RequestForDelete::create([
+            'classification' => $request->classification,
+            'thread_name' => $request->thread_name,
+            'name' => $request->name,
+            'delete_reason' => $request->delete_reason,            
+        ]);
+ 
+        foreach ($request->url as $url) {
+            $request_for_delete->urls = $request_for_delete->urls.',' .$url;
+        }
+
+        $request_for_delete->update();
+
+        return back();
+        
     }
 
     public function RequestForDeletionValidate(Request $request){
