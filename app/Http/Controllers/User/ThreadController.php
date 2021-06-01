@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Thread;
 use App\Comment;
 use SebastianBergmann\CodeUnit\FunctionUnit;
+use App\User;
 
 class ThreadController extends Controller
 {
@@ -26,6 +27,9 @@ class ThreadController extends Controller
         $cur_comments_count = Comment::where('thread_id',$thread->id)
         ->orderBy('comment_num','desc')->first();
 
+
+
+
         $comment = Comment::create([
             'thread_id' => $thread->id,
             'comment_num' => $cur_comments_count->comment_num +1,
@@ -44,6 +48,13 @@ class ThreadController extends Controller
 
             $comment->save();
         }
+
+        $user = User::where('ip')->first();
+
+        // if(isset*()){
+            
+        // }
+
 
         return back();
     }
