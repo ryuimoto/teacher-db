@@ -27,17 +27,28 @@ class ThreadController extends Controller
         $cur_comments_count = Comment::where('thread_id',$thread->id)
         ->orderBy('comment_num','desc')->first();
 
-
-
+        $comment_view_id = str_random(8);
 
         $comment = Comment::create([
             'thread_id' => $thread->id,
             'comment_num' => $cur_comments_count->comment_num +1,
             'name' => $request->name,
             'email' => $request->email,
-            'comment_view_id' => str_random(8),
+            'comment_view_id' => $comment_view_id,
             'comment' => $request->comment,
         ]);
+
+        $user = User::where('ip',$request->ip())->first();
+
+        if(isset($user)){
+            $comment->comment_view_id = $user->comment_view_id;
+        }else{
+            User::create([
+                'email' => $request->email,
+                'comment_view_id' => $comment_view_id,
+                'ip' => $request->ip(),
+            ]);
+        }
 
         if(strpos($request->comment,'>>') !== false){
             preg_match_all('!\d+!', $request->comment, $match);
@@ -45,8 +56,6 @@ class ThreadController extends Controller
             $comment->res_comment_num = $match[0][0];
             $comment->comment = str_replace(">> $comment->res_comment_num ",'',$comment->comment);
             $comment->comment = str_replace(">>$comment->res_comment_num ",'',$comment->comment);
-
-            $comment->save();
         }
 
         $user = User::where('ip')->first();
@@ -55,6 +64,7 @@ class ThreadController extends Controller
             
         // }
 
+        $comment->save();
 
         return back();
     }
