@@ -11,7 +11,7 @@
                 <li>{{$message}}</li>
             @enderror
             <label for="name">先生の名前</label>
-            <input type="text" name="name" placeholder="例) ○○県　先生の名前" id="name">
+            <input type="text" name="name" placeholder="例) ○○県　先生の名前" id="name" value="{{ old('name') }}">
         </div>
         <br>
         <div class="preference">
@@ -19,7 +19,7 @@
                 <li>{{$message}}</li>
             @enderror
             <label for="details">詳細</label>
-            <textarea name="details" id="details" id="" cols="30" rows="10" placeholder="現在の学校名、その他情報など"></textarea>
+            <textarea name="details" id="details" id="" cols="30" rows="10" placeholder="現在の学校名、その他情報など">{{ old('details') }}</textarea>
         </div>
         <div>
             <input type="submit" value="登録">
