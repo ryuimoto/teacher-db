@@ -1,4 +1,13 @@
 @extends('templates.admin.main')
+@section('js')
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+@endsection
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/admin/request_for_deletion.css') }}">
+@endsection
 @section('contents')
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
@@ -32,15 +41,19 @@
                             <tbody>
                                 @forelse ($request_for_deletes as $request_for_delete_key => $request_for_delete)
                                     @php
-                                        foreach (\App\Library\AdminView::convertArray($request_for_delete->urls) as $key => $value) {
+                                        $url_arr = [];
+                                        foreach(\App\Library\AdminView::convertArray($request_for_delete->urls) as $url_key => $url_value) {
+                                            $url_arr[] = $url_value;
                                         }
                                     @endphp
 
-                                    <tr data-href="">
+                                    <tr data-href="{{ route('admin.request_for_deletion_details',['request_for_deletion' => $request_for_delete]) }}">
                                         <td>{{ $request_for_delete->name }}</td>
                                         <td class="txt-oflo">{{ $request_for_delete->thread_name }}</td>
-                                        <td>{{ config("name.classification.$request_for_delete->classification")  }}</td>
-                                        <td class="txt-oflo">{{ \App\Library\AdminView::convertArray($request_for_delete->urls) }}</td>
+                                        <td>{{ config("name.classification.$request_for_delete->classification") }}</td>
+                                        <td class="txt-oflo">{{ $url_arr[0] }}</td>
+                                        <td class="txt-oflo">{{ $url_arr[1] }}</td>
+                                        <td class="txt-oflo">{{ $url_arr[2] }}</td>
                                         <td><span class="text-success">{{ $request_for_delete->delete_reason }}</span></td>
                                     </tr>
                                 @empty
@@ -52,4 +65,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $('tr[data-href]').addClass('clickable')
+            .click(function (e) {
+            if (!$(e.target).is('a')) {
+                window.location = $(e.target).closest('tr').data('href');
+            };
+        });
+    </script>
 @endsection

@@ -51,6 +51,8 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
 
             Route::get('request_for_deletion','Admin\DeleteGuideLineController@index')->name('admin.request_for_deletion');
 
+            Route::get('request_for_deletion/{request_for_deletion}','Admin\DeleteGuideLineController@showRequestForDeletionDetails')->name('admin.request_for_deletion_details');
+
         });
     });
 });
