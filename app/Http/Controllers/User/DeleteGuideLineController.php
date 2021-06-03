@@ -20,16 +20,15 @@ class DeleteGuideLineController extends Controller
     public function RequestForDeletionPost(Request $request){
         $this->RequestForDeletionValidate($request);
 
+        $url_conversion = implode(",", $request->url);
+
         $request_for_delete = RequestForDelete::create([
             'classification' => $request->classification,
             'thread_name' => $request->thread_name,
             'name' => $request->name,
-            'delete_reason' => $request->delete_reason,            
+            'delete_reason' => $request->delete_reason,
+            'urls' => $url_conversion,        
         ]);
- 
-        foreach ($request->url as $url) {
-            $request_for_delete->urls = $request_for_delete->urls.',' .$url;
-        }
 
         $request_for_delete->update();
 

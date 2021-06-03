@@ -31,7 +31,6 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('request_for_deletion','User\DeleteGuideLineController@showRequestForDeletion')->name('user.request_for_deletion');
     Route::post('request_for_deletion','User\DeleteGuideLineController@RequestForDeletionPost');
 
-
     Route::get('support','User\SupportController@index')->name('user.support');
     Route::post('support','User\SupportController@post');
     
@@ -43,7 +42,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
         
         Route::middleware('auth:admin')->group(function () { 
             Route::get('','Admin\TopController@index')->name('admin.top');
-            
+ 
             Route::get('/threads','Admin\ThreadsController@index')->name('admin.threads');
 
             Route::get('/thread/{thread}','Admin\ThreadsController@showThread')->name('admin.thread');
