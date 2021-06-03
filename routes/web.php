@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
             Route::post('/thread/{thread}','Admin\ThreadsController@updateThread')->name('admin.update_thread');
             Route::delete('/thread/{thread}','Admin\ThreadsController@deleteThread')->name('admin.delete_thread');
 
-            // Route::get('request_for_deletion','');
+            Route::get('request_for_deletion','Admin\DeleteGuideLineController@index')->name('admin.request_for_deletion');
 
         });
     });

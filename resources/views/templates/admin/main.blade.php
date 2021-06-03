@@ -131,7 +131,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.threads') }}"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.request_for_deletion') }}"
                                 aria-expanded="false">
                                 <i class="fa fa-user-times" aria-hidden="true"></i>
                                 <span class="hide-menu">{{ config('name.request_for_deletion') }}</span>

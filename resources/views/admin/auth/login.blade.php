@@ -19,7 +19,7 @@
                     <div class="form-group">
                      
                         <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                        <input type="text" name="name" class="form-control" placeholder="Username" required>
+                        <input type="text" name="name" class="form-control" placeholder="Username" value="{{ old('name') }}" required>
                     </div>
                     @error('password')
                         <div class="alert alert-danger">{{ $message }}</div>
