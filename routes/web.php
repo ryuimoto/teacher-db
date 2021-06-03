@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
         
         Route::middleware('auth:admin')->group(function () { 
             Route::get('','Admin\TopController@index')->name('admin.top');
- 
+            
             Route::get('/threads','Admin\ThreadsController@index')->name('admin.threads');
 
             Route::get('/thread/{thread}','Admin\ThreadsController@showThread')->name('admin.thread');

@@ -23,10 +23,10 @@
                 <small>
                     &nbsp;
                     <b>お名前：</b>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="{{ old('name') }}">
                     &nbsp;
                     <b>掲示板：</b>
-                    <input type="text" name="thread_name">
+                    <input type="text" name="thread_name" value="{{ old('thread_name') }}">
                 </small>
             </td>
         </tr>
@@ -36,7 +36,7 @@
         @enderror
         <tr>
             <th>削除対象URL： </th>
-            <td><input type="text" name="url[]"></td>
+            <td><input type="text" name="url[]" value="{{ old('url.0') }}"></td>
         </tr>
         <br>
         @error('url.2')
@@ -44,7 +44,7 @@
         @enderror
         <tr>
             <th>指定URLを必ず</th>
-            <td><input type="text" name="url[]"></td>
+            <td><input type="text" name="url[]" value="{{ old('url.1') }}"></td>
         </tr>
         <br>
         @error('url.3')
@@ -52,7 +52,7 @@
         @enderror
         <tr>
             <th>削除対象のみをお書きください。</th>
-            <td><input type="text" name="url[]"></td>
+            <td><input type="text" name="url[]" value="{{ old('url.2') }}"></td>
         </tr>
         <br>
         @error('reason')
@@ -60,7 +60,7 @@
         @enderror
         <tr>
             <th>依頼の理由：<br>詳細・その他：</th>
-            <td><textarea name="delete_reason" id="" cols="30" rows="5"></textarea></td>
+            <td><textarea name="delete_reason" id="" cols="30" rows="5">{{ old('delete_reason') }}</textarea></td>
         </tr>
         <br>
         <input type="submit" value="削除依頼をする">

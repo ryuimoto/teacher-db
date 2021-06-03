@@ -31,12 +31,17 @@
                             </thead>
                             <tbody>
                                 @forelse ($request_for_deletes as $request_for_delete_key => $request_for_delete)
+                                    @php
+                                        foreach (\App\Library\AdminView::convertArray($request_for_delete->urls) as $key => $value) {
+                                        }
+                                    @endphp
+
                                     <tr data-href="">
                                         <td>{{ $request_for_delete->name }}</td>
                                         <td class="txt-oflo">{{ $request_for_delete->thread_name }}</td>
                                         <td>{{ config("name.classification.$request_for_delete->classification")  }}</td>
-                                        <td class="txt-oflo">{{ $request_for_delete }}</td>
-                                        <td><span class="text-success"></span></td>
+                                        <td class="txt-oflo">{{ \App\Library\AdminView::convertArray($request_for_delete->urls) }}</td>
+                                        <td><span class="text-success">{{ $request_for_delete->delete_reason }}</span></td>
                                     </tr>
                                 @empty
                                 @endforelse
