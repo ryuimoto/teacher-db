@@ -19,7 +19,7 @@ class DeleteGuideLineController extends Controller
     }
 
     public function showRequestForDeletionDetails(RequestForDelete $request_for_deletion){
-        dd($request_for_deletion);
+        // return view();
     }
 
 }
