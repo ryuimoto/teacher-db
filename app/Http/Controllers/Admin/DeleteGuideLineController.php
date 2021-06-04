@@ -24,5 +24,8 @@ class DeleteGuideLineController extends Controller
         ]);
     }
 
-    
+    public function requestDelete(Request $request,RequestForDelete $request_for_deletion){
+        $request_for_deletion->delete();
+        return redirect()->route('admin.request_for_deletion');
+    }
 }
