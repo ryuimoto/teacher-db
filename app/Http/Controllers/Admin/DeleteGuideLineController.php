@@ -19,7 +19,10 @@ class DeleteGuideLineController extends Controller
     }
 
     public function showRequestForDeletionDetails(RequestForDelete $request_for_deletion){
-        // return view();
+        return view('admin.request_for_deletion_details')->with([
+            'request_for_deletion' => $request_for_deletion,
+        ]);
     }
 
+    
 }
