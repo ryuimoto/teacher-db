@@ -13,7 +13,6 @@ return [
         'source' => [
 
             'files' => [
-
                 /*
                  * The list of directories and files that will be included in the backup.
                  */
@@ -166,7 +165,8 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => 'your@example.com',
+            // 'to' => 'your@example.com',
+            'to' => 'narrow617@gmail.com',
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
