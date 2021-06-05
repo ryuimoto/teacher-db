@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
         Route::post('/login','Admin\Auth\LoginController@login');
 
         Route::get('logout','Admin\Auth\LoginController@logout')->name('admin.logout');
-        
+
         Route::middleware('auth:admin')->group(function () { 
             Route::get('','Admin\TopController@index')->name('admin.top');
             
@@ -50,10 +50,9 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
             Route::delete('/thread/{thread}','Admin\ThreadsController@deleteThread');
 
             Route::get('request_for_deletion','Admin\DeleteGuideLineController@index')->name('admin.request_for_deletion');
-            
+
             Route::get('request_for_deletion/{request_for_deletion}','Admin\DeleteGuideLineController@showRequestForDeletionDetails')->name('admin.request_for_deletion_details');
             Route::delete('request_for_deletion/{request_for_deletion}','Admin\DeleteGuideLineController@requestDelete');
-            
         });
     });
 });
