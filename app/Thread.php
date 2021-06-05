@@ -14,6 +14,7 @@ class Thread extends Model
      */
     protected $fillable = [
         'name',
+        'auther_ip',
         'details',
         'num_of_comments',
         'momentum',

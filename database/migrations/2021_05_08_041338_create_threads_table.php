@@ -15,7 +15,8 @@ class CreateThreadsTable extends Migration
     public function up()
     {
         Schema::create('threads', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id')->primary(); 
+            $table->string('auther_ip');
             $table->string('name');
             $table->longText('details');
             $table->bigInteger('num_of_comments')->nullable();

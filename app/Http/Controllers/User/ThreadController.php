@@ -60,10 +60,6 @@ class ThreadController extends Controller
 
         $user = User::where('ip')->first();
 
-        // if(isset*()){
-            
-        // }
-
         $comment->save();
 
         return back();
