@@ -50,7 +50,7 @@ class ThreadsController extends Controller
 
     public function registTeacherPostValidate($request){
         $request->validate([
-            'name' => 'required|max:255|',
+            'name' => 'required|max:255',
             'details' => 'required|max:500',
         ]);
     }

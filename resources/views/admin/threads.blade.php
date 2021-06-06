@@ -38,7 +38,7 @@
                                     <tr data-href="{{ route('admin.thread',['thread'=> $thread]) }}">
                                         <td>{{ $thread_key +1 }}</td>
                                         <td class="txt-oflo">{{ $thread->name }}</td>
-                                        <td>{{Str::limit($thread->details, 60, '…' )}}</td>
+                                        <td>{{Str::limit($thread->details, 100, '…' )}}</td>
                                         <td class="txt-oflo">{{ $thread->num_of_comments }}</td>
                                         <td><span class="text-success">{{ $thread->momentum }}</span></td>
                                     </tr>

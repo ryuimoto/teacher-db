@@ -19,7 +19,7 @@
             @forelse ($threads as $thread)
                 <div class="comment-box">
                     <a href="{{ route('user.thread',['thread' => $thread->id])}}">{{ $thread->name }}</a>
-                    <p>{{ $thread->details }}</p>
+                    <p>{{Str::limit($thread->details,200,'…')}}</p>
                     <p>{{ $thread->created_at->format('Y年m月d日') }}</p>
                 </div>
             @empty
