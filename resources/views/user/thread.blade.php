@@ -5,7 +5,7 @@
 @section('contents')
     <div class="thread">
         <h2 class="thread-name">{{ $thread->name }}</h2>
-        <p>{{ $thread->details }}</p>
+        <p>{!! nl2br(e($thread->details)) !!}</p>
     </div>
     <hr>
     <div>

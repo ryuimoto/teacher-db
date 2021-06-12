@@ -27,3 +27,8 @@ br {
 .post-input{
     margin: 0.5em;
 }
+
+p {
+    overflow-wrap: normal;
+    word-wrap: normal;
+}
