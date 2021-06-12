@@ -11,9 +11,11 @@ class ThreadsController extends Controller
 {
     public function index(){
         $threads = Thread::paginate();
+        $num_of_threads = Thread::get()->count();
 
         return view('admin.threads')->with([
             'threads' => $threads,
+            'num_of_threads' => $num_of_threads,
         ]);
     }
 
