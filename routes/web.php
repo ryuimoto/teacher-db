@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => 'auth.very_basic'], function() {
+// Route::group(['middleware' => 'auth.very_basic'], function() {
     Route::get('', 'User\TopController@index')->name('user.top');
 
     Route::get('threads','User\ThreadsController@index')->name('user.threads');
@@ -54,4 +54,4 @@ Route::group(['middleware' => 'auth.very_basic'], function() {
             Route::delete('request_for_deletion/{request_for_deletion}','Admin\DeleteGuideLineController@requestDelete');
         });
     });
-});
+// });
