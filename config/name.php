@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'site_title' => '先生DB',
+    'site_title' => 'センセイDB',
 
     'admin_site_title' => 'SenseiDB|Admin',
 
