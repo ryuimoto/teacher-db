@@ -14,7 +14,7 @@ class ThreadController extends Controller
     public function index(Thread $thread){
         $comments = Comment::where('thread_id',$thread->id)
         ->orderBy('comment_num','asc')->get();
-        
+
         return view('user.thread')->with([
             'thread' => $thread,
             'comments' => $comments,
@@ -31,7 +31,7 @@ class ThreadController extends Controller
 
         $comment = Comment::create([
             'thread_id' => $thread->id,
-            'comment_num' => $cur_comments_count->comment_num +1,
+            'comment_num' => optional($cur_comments_count)->comment_num +1,
             'name' => $request->name,
             'email' => $request->email,
             'comment_view_id' => $comment_view_id,
