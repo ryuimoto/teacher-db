@@ -11,6 +11,9 @@
     <div>
         @if (isset($comments))
             @forelse ($comments as $comment)
+                @php
+                    $comment->comment = \App\Library\PlanetextToUrl::convertLink($comment->comment);
+                @endphp
                 <div class="comment-box">
                     <div>
                         <span>{{ $comment->comment_num }}</span>
@@ -31,10 +34,10 @@
                             @if (isset($comment->res_comment_num))
                                 <span>
                                     <a href="{{ route('user.comment_details',['comment' => $comment,'thread' => $thread]) }}" target="_blank"> >>{{ $comment->res_comment_num }}</a>
-                                    {{ $comment->comment }}
+                                    {!! nl2br($comment->comment) !!}
                                 </span>
                             @else
-                                <span>{{ $comment->comment }}</span>
+                                <span>{!! nl2br($comment->comment) !!}</span>
                             @endif
                         </div>
                     </div>
