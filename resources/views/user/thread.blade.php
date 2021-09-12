@@ -5,6 +5,9 @@
 @section('contents')
     <div class="thread">
         <h2 class="thread-name">{{ $thread->name }}</h2>
+        @php
+            $thread->details = \App\Library\PlanetextToUrl::convertLink($thread->details);
+        @endphp
         <p>{!! nl2br(e($thread->details)) !!}</p>
     </div>
     <hr>
