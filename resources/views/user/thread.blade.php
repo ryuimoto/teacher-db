@@ -6,7 +6,7 @@
     <div class="thread">
         <h2 class="thread-name">{{ $thread->name }}</h2>
         @php
-            $thread->details = \App\Library\PlanetextToUrl::convertLink($thread->details);
+            $thread->details = \App\Library\planetextToUrl::convertLink($thread->details);
         @endphp
         <p>{!! nl2br(e($thread->details)) !!}</p>
     </div>
@@ -15,7 +15,7 @@
         @if (isset($comments))
             @forelse ($comments as $comment)
                 @php
-                    $comment->comment = \App\Library\PlanetextToUrl::convertLink($comment->comment);
+                    $comment->comment = \App\Library\planetextToUrl::convertLink($comment->comment);
                 @endphp
                 <div class="comment-box">
                     <div>

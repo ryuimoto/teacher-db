@@ -2,7 +2,7 @@
 
 namespace App\Library;
 
-class PlanetextToUrl
+class planetextToUrl
 {
     public static function convertLink($plane_text)
     {
